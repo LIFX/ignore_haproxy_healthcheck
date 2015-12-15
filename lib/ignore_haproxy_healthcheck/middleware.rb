@@ -8,7 +8,9 @@ module IgnoreHAProxyHealthcheck
 
     def call(env)
       if env['HTTP_USER_AGENT'] == "HAProxy-HealthCheck"
-        NewRelic::Agent.ignore_transaction
+        if defined?(NewRelic::Agent)
+          NewRelic::Agent.ignore_transaction
+        end
         [200, {'Content-Type' => 'text/plain'}, ["OK"]]
       else
         app.call(env)

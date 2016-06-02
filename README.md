@@ -7,7 +7,7 @@ To prevent HAProxy healthchecks from skewing our NewRelic data, this checks the 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ignore_haproxy_healthcheck', git: "https://github.com/chendo/ignore_haproxy_healthcheck"
+gem 'ignore_haproxy_healthcheck', git: "https://github.com/lifx/ignore_haproxy_healthcheck"
 ```
 
 ## Usage
